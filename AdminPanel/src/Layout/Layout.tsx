@@ -20,11 +20,11 @@ import { MdNotificationsActive } from "react-icons/md";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { MdReviews } from "react-icons/md"
-
-
+import { FaAngleRight } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 import { TbWorldBolt } from "react-icons/tb";
 import { FaBars, FaTimes } from 'react-icons/fa';
-
+import { SiInfracost } from "react-icons/si";
 interface LayoutProps {
   children: React.ReactNode;
 }
@@ -67,11 +67,255 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           <div className={`sidebar-drawer text-start ${isOpen ? 'open' : ''}`}>
 
+            <ul className="sidebar-menu">
+              <NavLink to="/dashboard" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><MdDashboard /></span>
+                  <span className="menu-text">Dashboard</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
 
+              <NavLink to="/orders" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><TbLogin2 /></span>
+                  <span className="menu-text">Orders</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/report" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><HiDocumentReport /></span>
+                  <span className="menu-text">Report</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/office-assistant" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><ImOffice /></span>
+                  <span className="menu-text">Office Assistant</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/office-assistant" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><SiInfracost /></span>
+                  <span className="menu-text">Expenses</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/product" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><MdOutlineProductionQuantityLimits /></span>
+                  <span className="menu-text">Product</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/review" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><MdReviews /></span>
+                  <span className="menu-text">Review</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/category" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><MdCategory /></span>
+                  <span className="menu-text">Category</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/sub-category" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><SiGooglepubsub /></span>
+                  <span className="menu-text">Sub Category</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/brands" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><TbBrandSvelte /></span>
+                  <span className="menu-text">Brands</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/variants" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><VscGroupByRefType /></span>
+                  <span className="menu-text">Variants</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/coupons" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><BiSolidOffer /></span>
+                  <span className="menu-text">Coupons</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/slider" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><TfiLayoutSliderAlt /></span>
+                  <span className="menu-text">Slider</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/notifications" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><MdNotificationsActive /></span>
+                  <span className="menu-text">Notifications</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+
+              <NavLink to="/logout" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+                <li>
+                  <span className="menu-icon"><RiLogoutCircleLine /></span>
+                  <span className="menu-text">Logout</span>
+                  <span className="menu-arrow"><FaAngleRight /></span>
+                </li>
+              </NavLink>
+            </ul>
+
+
+
+
+
+
+            {/* 
+          <ul className="sidebar-menu">
+            <Link to="/dashboard" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><MdDashboard /></span>
+                <span className="menu-text">Dashboard</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/orders" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><TbLogin2 /></span>
+                <span className="menu-text">Orders</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/report" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><HiDocumentReport /></span>
+                <span className="menu-text">Report</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/office-assistant" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><ImOffice /></span>
+                <span className="menu-text">Office Assistant</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+          </ul>
+
+          <ul className="sidebar-menu">
+            <Link to="/product" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><MdOutlineProductionQuantityLimits /></span>
+                <span className="menu-text">Product</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/product" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><MdReviews /></span>
+                <span className="menu-text">Review</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/category" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><MdCategory /></span>
+                <span className="menu-text">Category</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/sub-category" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><SiGooglepubsub /></span>
+                <span className="menu-text">Sub Category</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/brands" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><TbBrandSvelte /></span>
+                <span className="menu-text">Brands</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/variants" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><VscGroupByRefType /></span>
+                <span className="menu-text">Variants</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/coupons" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><BiSolidOffer /></span>
+                <span className="menu-text">Coupons</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/slider" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><TfiLayoutSliderAlt /></span>
+                <span className="menu-text">Slider</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/notifications" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><MdNotificationsActive /></span>
+                <span className="menu-text">Notifications</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+            <Link to="/logout" className="sidebar-menu-item">
+              <li>
+                <span className="menu-icon"><RiLogoutCircleLine /></span>
+                <span className="menu-text">Logout</span>
+                <span className="menu-arrow"><FaAngleRight /></span>
+              </li>
+            </Link>
+          </ul> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {/* 
             <ul className="list-group list-group-flush">
               <Link to="/dashboard" className="text-decoration-none text-dark">
                 <li className="list-group-item SideBarMenuItem">
-                  <MdDashboard className="me-2" /> Dashboard
+                  <MdDashboard className="me-2" /> Dashboard <FaAngleRight />
                 </li>
               </Link>
               <Link to="/orders" className="text-decoration-none text-dark">
@@ -91,7 +335,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </Link>
             </ul>
 
-            <hr className="my-1" />
 
             <ul className="list-group list-group-flush">
               <Link to="/product" className="text-decoration-none text-dark">
@@ -144,7 +387,23 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   <RiLogoutCircleLine className="me-2" /> Logout
                 </li>
               </Link>
-            </ul>
+            </ul> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
 
 

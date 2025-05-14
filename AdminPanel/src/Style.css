@@ -74,6 +74,7 @@ a {
 .sidebar-drawer {
   position: fixed;
   overflow: scroll;
+  scrollbar-color: var(--ColorTwo) var(--ColorOne); 
   top: 50px;
   left: -220px;
   height: 100%;
@@ -99,6 +100,63 @@ a {
 .ToggleButton svg{
     color: var(--ColorFour);
 }
+/* slider menu item start */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.sidebar-menu-item {
+  text-decoration: none;
+  color: var(--ColorOne);
+}
+
+.sidebar-menu-item li {
+  background-color: var(--ColorOne) ;
+  color: var(--ColorFour);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  /* border-bottom: 1px solid #eee; */
+  transition: 0.2s, color 0.2s;
+}
+
+.sidebar-menu-item li:hover {
+  background-color: var(--ColorTwo) ;
+  color: var(--ColorFour);
+  border: 1px solid var(--ColorFour);
+}
+
+.sidebar-menu-item .menu-icon {
+  margin-right: 12px;
+}
+
+.sidebar-menu-item .menu-text {
+  flex-grow: 1;
+}
+
+.sidebar-menu-item .menu-arrow {
+  margin-left: auto;
+}
+
+.sidebar-menu-item.active li {
+  background-color: var(--ColorTwo) ;
+  color: var(--ColorFour);
+  border: 1px solid var(--ColorFour);
+}
+
+
+.sidebar-menu-item.active li .menu-icon,
+.sidebar-menu-item.active li .menu-text,
+.sidebar-menu-item.active li .menu-arrow {
+  color: var(--ColorFour);
+}
+
+
+/* slider menu item end */
 /*  Side bar End  */
 
 
@@ -145,7 +203,7 @@ a {
     height: 25px;
     text-align: center;
 }
-
+/* 
 .list-group-item{
 padding: 5px 10px !important;
 background-color: var(--ColorOne) !important;
@@ -156,7 +214,9 @@ transition: 700ms !important;
     background-color: var(--ColorThree) !important;
     color: var(--ColorOne) !important;
     cursor: pointer !important;
-}
+} */
+
+
 /* ================ Layout End ================ */
 
 

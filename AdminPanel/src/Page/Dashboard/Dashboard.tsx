@@ -65,7 +65,7 @@ const visitorData = [
 
 
     {/* ==================== Today Overview Start ====================== */}
-    <div className="row mx-0 gx-0">
+    <div className="row mx-0 gx-4 gy-4">
       <div className="col-md-3 TodayOverview1">
         <div className="card text-center">
           <div className="card-body">
@@ -115,7 +115,7 @@ const visitorData = [
 
 
     {/* ==================== Order Overview Start ====================== */}
-    <div className="row mx-0 gx-4 gy-4">
+    <div className="row mx-0 gx-4 gy-4 mt-2">
 
       {/* Total Orders */}
       <div className="col-md-6">
@@ -174,14 +174,11 @@ const visitorData = [
 
 
 
-    <hr />
-
-
 
 
 
     {/* ========================= Visitor Overview Start ========================= */}
-    <div className="row mx-0 gx-4 gy-4">
+    <div className="row mx-0 gx-4 gy-4 mt-4">
       {/* Product Order Chart */}
       <div className="col-md-6 mb-4">
         <div className="card p-3 shadow-sm">
