@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import { FiRefreshCw } from "react-icons/fi";
 import DateAndTime from "../../Components/DateAndTime/DateAndTime";
-import { FaEye } from 'react-icons/fa';
+import { FaEye, FaSave, FaWindowClose   } from 'react-icons/fa';
+import { IoIosPrint } from "react-icons/io";
+import PaymentReceipt from "../../Components/PaymentReceipt/PaymentReceipt";
+import { createRoot } from 'react-dom/client';
+
 
 interface Order {
   title: string;
@@ -19,6 +23,23 @@ interface Order {
   badgeClassPayment: string;
   badgeClassOrder: string;
 }
+
+
+const sampleOrder: Order = {
+  title: 'Sample Product',
+  products: ['https://via.placeholder.com/80'],
+  qty: 2,
+  userName: 'Rasel Adib',
+  userNumber: '0123456789',
+  address: 'Dhaka, Bangladesh',
+  paymentStatus: 'Paid',
+  orderStatus: 'Delivered',
+  date: '2025-05-16',
+  price: '100',
+  total: '200',
+  badgeClassPayment: 'bg-success text-white',
+  badgeClassOrder: 'bg-info text-dark'
+};
 
 const Orders = () => {
 
@@ -115,6 +136,31 @@ const Orders = () => {
     }
   };
 
+
+const handlePaymentReceipt = (order: Order) => {
+  return (
+    <>
+      <PaymentReceipt order={order} />
+    </>
+  );
+};
+
+
+  const handlePrintOrder = (order: Order) => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const root = createRoot(container);
+    root.render(<PaymentReceipt order={order} />);
+
+    setTimeout(() => {
+      window.print();
+      root.unmount();
+      document.body.removeChild(container);
+    }, 500);
+  };
+
+
+
   const getPaymentBadgeClass = (status: string) => {
     if (status === 'Paid') return 'bg-success';
     else if (status === 'Unpaid') return 'bg-danger';
@@ -138,6 +184,7 @@ const Orders = () => {
   return (
 
     <>
+
 
       {/* ==================== Breadcrumb (Sub Menu Map) Start ====================== */}
       <div className="d-flex  justify-content-between">
@@ -403,19 +450,42 @@ const Orders = () => {
                   </div>
                 </div>
 
-                <div className="mt-4 d-flex justify-content-end gap-2">
-                  <button
-                    className="btn btn-secondary"
-                    onClick={() => setSelectedProduct(null)}
-                  >
-                    Close
-                  </button>
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => handleSaveChanges()}
-                  >
-                    Save Changes
-                  </button>
+                <div className="mt-4 d-flex justify-content-start justify-content-between">
+                  <div className="">
+
+                    
+                    <button
+                      className="btn btn-success me-2"
+                      onClick={() => handleSaveChanges()}
+                    >
+                      Save Changes <FaSave />
+                    </button>
+
+
+
+                    <button
+                      className="btn btn-primary "
+                    //  onClick={() => handlePaymentReceipt(selectedProduct)}
+                       onClick={() => handlePrintOrder(selectedProduct)}
+                    >
+                      Payment Receipt <IoIosPrint />
+                    </button>
+
+
+
+
+                    
+                  </div>
+
+                  <div className="">
+
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => setSelectedProduct(null)}
+                    >
+                      Close <FaWindowClose />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
