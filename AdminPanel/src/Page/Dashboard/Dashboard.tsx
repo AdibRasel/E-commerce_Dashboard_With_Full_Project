@@ -16,32 +16,33 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import DateAndTime from "../../Components/DateAndTime/DateAndTime";
 
 
 function Dashboard() {
 
 
-// গত মাসের প্রোডাক্ট অর্ডারের ডেটা
-const productOrderData = [
-  { date: "May 1", orders: 20 },
-  { date: "May 5", orders: 40 },
-  { date: "May 10", orders: 70 },
-  { date: "May 15", orders: 50 },
-  { date: "May 20", orders: 90 },
-  { date: "May 25", orders: 110 },
-  { date: "May 30", orders: 130 },
-];
+  // গত মাসের প্রোডাক্ট অর্ডারের ডেটা
+  const productOrderData = [
+    { date: "May 1", orders: 20 },
+    { date: "May 5", orders: 40 },
+    { date: "May 10", orders: 70 },
+    { date: "May 15", orders: 50 },
+    { date: "May 20", orders: 90 },
+    { date: "May 25", orders: 110 },
+    { date: "May 30", orders: 130 },
+  ];
 
-// গত 7 দিনের ভিজিটর ডেটা
-const visitorData = [
-  { date: "May 1", visitors: 100 },
-  { date: "May 2", visitors: 150 },
-  { date: "May 3", visitors: 120 },
-  { date: "May 4", visitors: 180 },
-  { date: "May 5", visitors: 160 },
-  { date: "May 6", visitors: 220 },
-  { date: "May 7", visitors: 200 },
-];
+  // গত 7 দিনের ভিজিটর ডেটা
+  const visitorData = [
+    { date: "May 1", visitors: 100 },
+    { date: "May 2", visitors: 150 },
+    { date: "May 3", visitors: 120 },
+    { date: "May 4", visitors: 180 },
+    { date: "May 5", visitors: 160 },
+    { date: "May 6", visitors: 220 },
+    { date: "May 7", visitors: 200 },
+  ];
 
   return <>
 
@@ -53,10 +54,9 @@ const visitorData = [
           <li className="breadcrumb-item active" aria-current="page">Dashboard</li>
         </ol>
       </nav>
-      <div className="TodayDate">
-        <span className="text-end">Today: {new Date().toLocaleDateString()}</span> &nbsp; || &nbsp;
-        <span className="text-end">Time: {new Date().toLocaleTimeString()}</span>
-      </div>
+        <div className="TodayDate">
+          <DateAndTime />
+        </div>
     </div>
     {/* ==================== Breadcrumb (Sub Menu Map) End ====================== */}
 
@@ -67,6 +67,7 @@ const visitorData = [
     {/* ==================== Today Overview Start ====================== */}
     <div className="row mx-0 gx-4 gy-4">
       <div className="col-md-3 TodayOverview1">
+        <Link to="/Orders">
         <div className="card text-center">
           <div className="card-body">
             <BsStack className="mb-2" style={{ fontSize: "30px" }} />
@@ -74,17 +75,22 @@ const visitorData = [
             <p className="card-text">100</p>
           </div>
         </div>
+        </Link>
       </div>
       <div className="col-md-3 TodayOverview2">
-        <div className="card text-center">
-          <div className="card-body">
-            <BsStack className="mb-2" style={{ fontSize: "30px" }} />
-            <h5 className="card-title">Yesterday's order</h5>
-            <p className="card-text">50</p>
+        <Link to="/Orders">
+          <div className="card text-center">
+            <div className="card-body">
+              <BsStack className="mb-2" style={{ fontSize: "30px" }} />
+              <h5 className="card-title">Yesterday's order</h5>
+              <p className="card-text">50</p>
+            </div>
           </div>
-        </div>
+        </Link>
+
       </div>
       <div className="col-md-3 TodayOverview3">
+        <Link to="/Report">
         <div className="card text-center">
           <div className="card-body">
             <BsFillCalendar2WeekFill className="mb-2" style={{ fontSize: "30px" }} />
@@ -92,8 +98,10 @@ const visitorData = [
             <p className="card-text">5000/-</p>
           </div>
         </div>
+        </Link>
       </div>
       <div className="col-md-3 TodayOverview4">
+        <Link to="/Expenses">
         <div className="card text-center">
           <div className="card-body">
             <BsFillCalendar2WeekFill className="mb-2" style={{ fontSize: "30px" }} />
@@ -101,6 +109,7 @@ const visitorData = [
             <p className="card-text">200/-</p>
           </div>
         </div>
+        </Link>
       </div>
     </div>
     {/* ==================== Today Overview Edn ====================== */}
@@ -121,7 +130,7 @@ const visitorData = [
       <div className="col-md-6">
         <div className="d-flex align-items-center p-3 shadow rounded bg-white">
           <div className="me-4">
-            <FaShoppingCart size={40} color="#4e73df" />
+            <FaShoppingCart size={40} color="#213448" />
           </div>
           <div>
             <h5 className="mb-1">Total Orders</h5>
@@ -134,7 +143,7 @@ const visitorData = [
       <div className="col-md-6">
         <div className="d-flex align-items-center p-3 shadow rounded bg-white">
           <div className="me-4">
-            <FaClock size={40} color="#f6c23e" />
+            <FaClock size={40} color="#059669" />
           </div>
           <div>
             <h5 className="mb-1">Orders Pending</h5>
@@ -147,7 +156,7 @@ const visitorData = [
       <div className="col-md-6">
         <div className="d-flex align-items-center p-3 shadow rounded bg-white">
           <div className="me-4">
-            <FaCog size={40} color="#36b9cc" />
+            <FaCog size={40} color="#314DA7" />
           </div>
           <div>
             <h5 className="mb-1">Orders Processing</h5>
@@ -160,7 +169,7 @@ const visitorData = [
       <div className="col-md-6">
         <div className="d-flex align-items-center p-3 shadow rounded bg-white">
           <div className="me-4">
-            <FaTruck size={40} color="#1cc88a" />
+            <FaTruck size={40} color="#0891B2" />
           </div>
           <div>
             <h5 className="mb-1">Orders Delivered</h5>
@@ -203,7 +212,7 @@ const visitorData = [
       </div>
 
       {/* Visitor Chart */}
-      <div className="col-md-6 mb-4">
+      <div id="VisitorOverview" className="col-md-6 mb-4">
         <div className="card p-3 shadow-sm">
           <h5 className="text-center mb-3">👥 Visitor Overview</h5>
           <ResponsiveContainer width="100%" height={300}>

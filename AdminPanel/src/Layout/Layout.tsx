@@ -56,7 +56,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <img src={LongLogo} style={{ height: "40px", }} alt="" />
               </Link>
             </div>
-            <div className="">
+            {/* ToggleDrawer আইকন টা মোবাইল রেসপন্সিভ এ সমস্যা করার কারন TrogolContent.TrogolContentOpen যায়গা বেশি নেওয়া */}
+            <div style={{marginRight:"10px"}} className="">
               <span className="ToggleButton" onClick={toggleDrawer}>
                 {isOpen ? <FaTimes /> : <FaBars />}
               </span>
@@ -68,7 +69,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className={`sidebar-drawer text-start ${isOpen ? 'open' : ''}`}>
 
             <ul className="sidebar-menu">
-              <NavLink to="/dashboard" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Dashboard" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><MdDashboard /></span>
                   <span className="menu-text">Dashboard</span>
@@ -76,7 +77,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/orders" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Orders" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><TbLogin2 /></span>
                   <span className="menu-text">Orders</span>
@@ -84,7 +85,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/report" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Report" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><HiDocumentReport /></span>
                   <span className="menu-text">Report</span>
@@ -92,7 +93,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/office-assistant" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/OfficeAssistant" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><ImOffice /></span>
                   <span className="menu-text">Office Assistant</span>
@@ -100,7 +101,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/office-assistant" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Expenses" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><SiInfracost /></span>
                   <span className="menu-text">Expenses</span>
@@ -108,7 +109,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/product" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Product" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><MdOutlineProductionQuantityLimits /></span>
                   <span className="menu-text">Product</span>
@@ -116,7 +117,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/review" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Review" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><MdReviews /></span>
                   <span className="menu-text">Review</span>
@@ -124,7 +125,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/category" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Category" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><MdCategory /></span>
                   <span className="menu-text">Category</span>
@@ -132,7 +133,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/sub-category" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/SubCategory" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><SiGooglepubsub /></span>
                   <span className="menu-text">Sub Category</span>
@@ -140,7 +141,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/brands" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Brands" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><TbBrandSvelte /></span>
                   <span className="menu-text">Brands</span>
@@ -148,7 +149,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/variants" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Variants" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><VscGroupByRefType /></span>
                   <span className="menu-text">Variants</span>
@@ -156,7 +157,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/coupons" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Coupons" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><BiSolidOffer /></span>
                   <span className="menu-text">Coupons</span>
@@ -164,7 +165,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/slider" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Slider" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><TfiLayoutSliderAlt /></span>
                   <span className="menu-text">Slider</span>
@@ -172,7 +173,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
 
-              <NavLink to="/notifications" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
+              <NavLink to="/Notifications" className={({ isActive }) => isActive ? "sidebar-menu-item active" : "sidebar-menu-item"}>
                 <li>
                   <span className="menu-icon"><MdNotificationsActive /></span>
                   <span className="menu-text">Notifications</span>
@@ -188,206 +189,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
               </NavLink>
             </ul>
-
-
-
-
-
-
-            {/* 
-          <ul className="sidebar-menu">
-            <Link to="/dashboard" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><MdDashboard /></span>
-                <span className="menu-text">Dashboard</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/orders" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><TbLogin2 /></span>
-                <span className="menu-text">Orders</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/report" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><HiDocumentReport /></span>
-                <span className="menu-text">Report</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/office-assistant" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><ImOffice /></span>
-                <span className="menu-text">Office Assistant</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-          </ul>
-
-          <ul className="sidebar-menu">
-            <Link to="/product" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><MdOutlineProductionQuantityLimits /></span>
-                <span className="menu-text">Product</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/product" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><MdReviews /></span>
-                <span className="menu-text">Review</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/category" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><MdCategory /></span>
-                <span className="menu-text">Category</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/sub-category" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><SiGooglepubsub /></span>
-                <span className="menu-text">Sub Category</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/brands" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><TbBrandSvelte /></span>
-                <span className="menu-text">Brands</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/variants" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><VscGroupByRefType /></span>
-                <span className="menu-text">Variants</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/coupons" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><BiSolidOffer /></span>
-                <span className="menu-text">Coupons</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/slider" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><TfiLayoutSliderAlt /></span>
-                <span className="menu-text">Slider</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/notifications" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><MdNotificationsActive /></span>
-                <span className="menu-text">Notifications</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-            <Link to="/logout" className="sidebar-menu-item">
-              <li>
-                <span className="menu-icon"><RiLogoutCircleLine /></span>
-                <span className="menu-text">Logout</span>
-                <span className="menu-arrow"><FaAngleRight /></span>
-              </li>
-            </Link>
-          </ul> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-            {/* 
-            <ul className="list-group list-group-flush">
-              <Link to="/dashboard" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <MdDashboard className="me-2" /> Dashboard <FaAngleRight />
-                </li>
-              </Link>
-              <Link to="/orders" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <TbLogin2 className="me-2" /> Orders
-                </li>
-              </Link>
-              <Link to="/report" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <HiDocumentReport className="me-2" /> Report
-                </li>
-              </Link>
-              <Link to="/office-assistant" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <ImOffice className="me-2" /> Office Assistant
-                </li>
-              </Link>
-            </ul>
-
-
-            <ul className="list-group list-group-flush">
-              <Link to="/product" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <MdOutlineProductionQuantityLimits className="me-2" /> Product
-                </li>
-              </Link>
-              <Link to="/product" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <MdReviews className="me-2" /> Review
-                </li>
-              </Link>
-              <Link to="/category" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <MdCategory className="me-2" /> Category
-                </li>
-              </Link>
-              <Link to="/sub-category" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <SiGooglepubsub className="me-2" /> Sub Category
-                </li>
-              </Link>
-              <Link to="/brands" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <TbBrandSvelte className="me-2" /> Brands
-                </li>
-              </Link>
-              <Link to="/variants" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <VscGroupByRefType className="me-2" /> Variants
-                </li>
-              </Link>
-              <Link to="/coupons" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <BiSolidOffer className="me-2" /> Coupons
-                </li>
-              </Link>
-              <Link to="/slider" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <TfiLayoutSliderAlt className="me-2" /> Slider
-                </li>
-              </Link>
-              <Link to="/notifications" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <MdNotificationsActive className="me-2" /> Notifications
-                </li>
-              </Link>
-              <Link to="/logout" className="text-decoration-none text-dark">
-                <li className="list-group-item SideBarMenuItem">
-                  <RiLogoutCircleLine className="me-2" /> Logout
-                </li>
-              </Link>
-            </ul> */}
 
 
 
@@ -423,17 +224,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="HeaderLogo"> </div>
 
             <div className="HeaderIcon d-flex align-items-center gap-1">
-              <Link to="/" className="position-relative">
+              <Link to="/Orders" className="position-relative">
                 <FaBell size={20} />
                 <span className="NotificationAlart">12</span>
               </Link>
 
-              <Link to="/" className="position-relative">
+              <Link to="/Review" className="position-relative">
                 <MdReviews size={20} />
                 <span className="NotificationAlart">10</span>
               </Link>
 
-              <Link to="/" className='position-relative'>
+              <Link to="/Dashboard" className='position-relative'>
                 <TbWorldBolt size={20} />
                 <span className="NotificationAlart">154</span>
               </Link>
@@ -498,7 +299,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
 
       {/* ========================== Main Content Start ========================= */}
-      <div className={`TrogolContent ${isOpen ? 'TrogolContentOpen' : ''}`}>
+      <div className={`TrogolContent  ${isOpen ? 'TrogolContentOpen' : ''}`}>
         <div className="MainContent" style={{ paddingTop: "50px" }}>
           <div style={{ padding: "10px" }}>
             {children}
