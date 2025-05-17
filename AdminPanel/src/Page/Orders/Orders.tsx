@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import { FiRefreshCw } from "react-icons/fi";
 import DateAndTime from "../../Components/DateAndTime/DateAndTime";
-import { FaEye, FaSave, FaWindowClose   } from 'react-icons/fa';
+import { FaEye, FaSave, FaWindowClose } from 'react-icons/fa';
 import { IoIosPrint } from "react-icons/io";
 import PaymentReceipt from "../../Components/PaymentReceipt/PaymentReceipt";
 import { createRoot } from 'react-dom/client';
+import Pagination from "../../Components/Pagination/Pagination";
 
 
 interface Order {
@@ -137,13 +138,13 @@ const Orders = () => {
   };
 
 
-const handlePaymentReceipt = (order: Order) => {
-  return (
-    <>
-      <PaymentReceipt order={order} />
-    </>
-  );
-};
+  const handlePaymentReceipt = (order: Order) => {
+    return (
+      <>
+        <PaymentReceipt order={order} />
+      </>
+    );
+  };
 
 
   const handlePrintOrder = (order: Order) => {
@@ -181,6 +182,18 @@ const handlePaymentReceipt = (order: Order) => {
 
   const [modalImage, setModalImage] = useState<string | null>(null);
 
+  // Pagination start
+  const paginationItems = Array.from({ length: 123 }, (_, i) => `Item ${i + 1}`);
+  const [paginationCurrentPage, setPaginationCurrentPage] = useState(1);
+  const [paginationItemsPerPage, setPaginationItemsPerPage] = useState(20);
+
+  const startIdx = (paginationCurrentPage - 1) * paginationItemsPerPage;
+  const currentPaginationItems = paginationItems.slice(
+    startIdx,
+    startIdx + paginationItemsPerPage
+  );
+  // Pagination End
+
   return (
 
     <>
@@ -202,7 +215,7 @@ const handlePaymentReceipt = (order: Order) => {
 
 
 
-      {/* ==================== Main Content Start ====================== */}
+      {/* ==================== Main Content Start > Card ====================== */}
       <div className="card">
 
 
@@ -453,7 +466,7 @@ const handlePaymentReceipt = (order: Order) => {
                 <div className="mt-4 d-flex justify-content-start justify-content-between">
                   <div className="">
 
-                    
+
                     <button
                       className="btn btn-success me-2"
                       onClick={() => handleSaveChanges()}
@@ -465,8 +478,8 @@ const handlePaymentReceipt = (order: Order) => {
 
                     <button
                       className="btn btn-primary "
-                    //  onClick={() => handlePaymentReceipt(selectedProduct)}
-                       onClick={() => handlePrintOrder(selectedProduct)}
+                      //  onClick={() => handlePaymentReceipt(selectedProduct)}
+                      onClick={() => handlePrintOrder(selectedProduct)}
                     >
                       Payment Receipt <IoIosPrint />
                     </button>
@@ -474,7 +487,7 @@ const handlePaymentReceipt = (order: Order) => {
 
 
 
-                    
+
                   </div>
 
                   <div className="">
@@ -496,16 +509,25 @@ const handlePaymentReceipt = (order: Order) => {
 
 
 
+          {/* Pagination Component */}
+          <Pagination
+            totalItems={paginationItems.length}
+            itemsPerPage={paginationItemsPerPage}
+            currentPage={paginationCurrentPage}
+            onPageChange={setPaginationCurrentPage}
+            onItemsPerPageChange={setPaginationItemsPerPage}
+          />
+          {/* Pagination Component End */}
+
+
         </div>
         {/* ==================== Orders Table And card-body End ====================== */}
 
 
 
 
-
-
       </div>
-      {/* ==================== Main Content Edn ====================== */}
+      {/* ==================== Main Content Edn > Card ====================== */}
 
     </>
   )

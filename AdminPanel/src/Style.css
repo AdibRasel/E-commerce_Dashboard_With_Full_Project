@@ -461,3 +461,91 @@ a {
 }
 
 /* ========================== Orders End ========================== */
+
+
+
+
+
+
+
+
+
+
+
+/* ========================== Pagination End ========================== */
+
+.pagination .page-item .page-link {
+  color: var(--ColorOne);
+  border-color: var(--ColorTwo);
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--ColorTwo);
+  color: white;
+  border-color: var(--ColorTwo);
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #ccc;
+  pointer-events: none;
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: var(--ColorThree);
+  color: white;
+  border-color: var(--ColorThree);
+}
+
+.form-select {
+  border-color: var(--ColorTwo);
+  color: var(--ColorOne);
+}
+
+.form-select:focus {
+  border-color: var(--ColorThree);
+  box-shadow: 0 0 0 0.2rem rgba(84, 119, 146, 0.25);
+}
+
+/* ========================== Pagination End ========================== */
+
+
+
+
+
+
+
+
+
+/* ========================== Report Start ========================== */
+.summary-card {
+  background-color: var(--ColorFour);
+  color: var(--ColorOne);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.summary-card:hover {
+  transform: scale(1.02);
+}
+
+.today-date {
+  color: var(--ColorTwo);
+}
+
+.table > :not(caption) > * > * {
+  vertical-align: middle;
+}
+/* ========================== Report End ========================== */
+
+
+
+
+
+
+
+

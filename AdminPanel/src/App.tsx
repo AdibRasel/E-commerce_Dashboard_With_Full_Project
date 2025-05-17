@@ -18,6 +18,7 @@ import Notifications from "./Page/Notifications/Notifications";
 import OrdersPending from "./Page/Orders/OrdersPending";
 import OrdersProcessing from "./Page/Orders/OrdersProcessing";
 import OrdersDelivered from "./Page/Orders/OrdersDelivered";
+import AdminReport from "./Components/AdminReport/AdminReport";
 // start commend npm run dev -- --host 0.0.0.0
 // deploy npm run deploy
 
@@ -50,6 +51,7 @@ function App() {
             <Route path="/Coupons" element={<Coupons />} />
             <Route path="/Slider" element={<Slider />} />
             <Route path="/Notifications" element={<Notifications />} />
+            <Route path="/AdminReport" element={<AdminReport />} />
           </Routes>
         </Layout>
       ) : (
