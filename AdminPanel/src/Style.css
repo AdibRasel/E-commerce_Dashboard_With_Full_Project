@@ -549,3 +549,55 @@ a {
 
 
 
+
+
+/* ========================== Office Assistant Start ========================== */
+.office-assistant-container {
+  background-color: var(--ColorFour);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.office-card {
+  border: 1px solid var(--ColorThree);
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.office-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-add {
+  background-color: var(--ColorTwo);
+  color: #fff;
+}
+
+.btn-add:hover {
+  background-color: var(--ColorOne);
+  color: #fff;
+}
+.table th {
+  white-space: nowrap;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+  opacity: 0.9;
+}
+
+.modal .form-control:focus {
+  border-color: var(--ColorThree);
+  box-shadow: 0 0 0 0.2rem rgba(148, 180, 193, 0.25);
+}
+/* ========================== Office Assistant End ========================== */
+
+
+
+
+
+
+
+
