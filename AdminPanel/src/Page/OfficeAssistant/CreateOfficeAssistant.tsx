@@ -19,7 +19,7 @@ const CreateOfficeAssistant: React.FC<Props> = ({ onClose }) => {
                 <div className="col-md-6 text-center">
                     <label className="form-label d-block">Profile Image</label>
                     <img
-                        src="https://i.pravatar.cc/100?img=8"
+                        src="https://i.pravatar.cc/100?img=33"
                         alt="Preview"
                         className="rounded-circle mb-2"
                         style={{ width: '100px', height: '100px', objectFit: 'cover' }}

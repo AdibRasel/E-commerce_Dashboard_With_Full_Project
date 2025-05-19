@@ -73,7 +73,7 @@ const OfficeAssistant = () => {
                             <td>1</td>
                             <td>
                                 <img
-                                    src="https://i.pravatar.cc/100?img=9"
+                                    src="https://i.pravatar.cc/100?img=33"
                                     alt="Assistant"
                                     className="rounded-circle"
                                     style={{ width: '50px', height: '50px', objectFit: 'cover' }}

@@ -19,6 +19,7 @@ import OrdersPending from "./Page/Orders/OrdersPending";
 import OrdersProcessing from "./Page/Orders/OrdersProcessing";
 import OrdersDelivered from "./Page/Orders/OrdersDelivered";
 import AdminReport from "./Components/AdminReport/AdminReport";
+import BottomToTopButton from "./Components/BottomToTopButton/BottomToTopButton";
 // start commend npm run dev -- --host 0.0.0.0
 // deploy npm run deploy
 
@@ -53,6 +54,7 @@ function App() {
             <Route path="/Notifications" element={<Notifications />} />
             <Route path="/AdminReport" element={<AdminReport />} />
           </Routes>
+          <BottomToTopButton />
         </Layout>
       ) : (
         // login না হলে নিচের গুলো শো করবে।

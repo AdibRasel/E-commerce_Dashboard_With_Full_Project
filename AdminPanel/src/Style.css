@@ -12,6 +12,9 @@
         width: 100%;
         justify-content: space-between;
     }
+        .btn-add-expense {
+        width: 100%;
+    }
 }
 
 
@@ -59,7 +62,25 @@ a {
 }
 
 
+.scroll-to-top-btn {
+  width: 45px;
+  height: 45px;
+  background-color: var(--ColorTwo) !important; 
+  color: var(--ColorFour) !important;
+  z-index: 99999;
+}
 
+/* .btn-primary {
+    background-color: var(--ColorTwo) !important;
+    color: var(--ColorFour) !important;
+    border: 1px solid var(--ColorFour) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--ColorThree) !important;
+    color: var(--ColorFour) !important;
+    border: 1px solid var(--ColorFour);
+} */
 /* ============ Besic End =============== */
 
 
@@ -593,6 +614,167 @@ a {
   box-shadow: 0 0 0 0.2rem rgba(148, 180, 193, 0.25);
 }
 /* ========================== Office Assistant End ========================== */
+
+
+
+
+
+
+
+
+/* ========================== Expenses Start ========================== */
+.ExpensesSummary{
+    background-color: #a9090937;
+    color: var(--ColorOne) !important;
+    font-weight: 600 !important;
+}
+.ExpensesSummaryColor{
+    color: var(--ColorOne) !important;
+}
+/* Breadcrumb */
+.breadcrumb-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--ColorTwo);
+  padding-bottom: 8px;
+}
+
+.breadcrumb-wrapper nav .breadcrumb {
+  background-color: transparent !important;
+}
+
+.breadcrumb-wrapper .breadcrumb-item a {
+  color: var(--ColorOne);
+  font-weight: 600;
+}
+
+.breadcrumb-wrapper .breadcrumb-item.active {
+  color: var(--ColorThree);
+  font-weight: 600;
+}
+
+.today-date {
+  color: var(--ColorOne);
+  font-weight: 600;
+}
+
+/* Top Controls */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.total-expense {
+  background-color: var(--ColorTwo);
+  color: var(--ColorFour);
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(84, 119, 146, 0.5);
+  font-size: 1.25rem;
+  min-width: 220px;
+  text-align: center;
+}
+
+.btn-add-expense {
+  background-color: var(--ColorOne);
+  color: var(--ColorFour);
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(33, 52, 72, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add-expense:hover {
+  background-color: var(--ColorTwo);
+}
+
+/* Table container */
+.table-wrapper {
+  border: 1px solid var(--ColorThree);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  overflow-x: auto;
+}
+
+/* Table */
+.expenses-table {
+  min-width: 600px;
+}
+
+.expenses-table thead {
+  background-color: var(--ColorTwo);
+  color: var(--ColorFour);
+}
+
+.expenses-table th {
+  font-weight: 700;
+}
+
+.expenses-table tbody tr:nth-child(even) {
+  background-color: var(--ColorFour);
+}
+
+.expenses-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.expenses-table tbody tr:hover {
+  background-color: var(--ColorThree);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.expenses-table td,
+.expenses-table th {
+  color: var(--ColorOne);
+}
+
+.expenses-table td.bold {
+  font-weight: 600;
+}
+
+.no-expenses-row td {
+  color: var(--ColorOne);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* CustomDatePicker.css */
+.custom-date-picker-wrapper {
+  position: relative;
+}
+
+.custom-date-picker .react-date-picker__wrapper {
+  border-radius: 8px;
+  padding: 6px 12px;
+  border: 1px solid #ced4da;
+  font-size: 16px;
+  width: 100%;
+}
+
+.custom-date-picker .react-date-picker__inputGroup input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 2.2em;
+}
+
+.custom-date-picker .react-date-picker__calendar {
+  z-index: 1000;
+}
+
+.custom-date-picker .react-date-picker__button {
+  color: #0d6efd;
+}
+/* ========================== Expenses End ========================== */
 
 
 
