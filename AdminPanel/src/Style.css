@@ -797,3 +797,39 @@ a {
 
 
 
+/* ========================== Category Start ========================== */
+/* 
+.table thead {
+  background-color: var(--ColorOne);
+  color: white;
+}
+
+.table tbody tr td {
+  background-color: var(--ColorFour);
+  color: var(--ColorOne);
+}
+
+.btn-primary {
+  background-color: var(--ColorTwo);
+  border: none;
+}
+
+.btn-warning {
+  background-color: var(--ColorThree);
+  border: none;
+  color: white;
+}
+
+.btn-danger {
+  background-color: red;
+  border: none;
+} */
+/* ========================== Category End ========================== */
+
+
+
+
+
+
+
+

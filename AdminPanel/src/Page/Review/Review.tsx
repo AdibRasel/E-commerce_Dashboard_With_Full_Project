@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import DateAndTime from '../../Components/DateAndTime/DateAndTime';
 import Pagination from '../../Components/Pagination/Pagination';
-// import EditReviewModal from './EditReviewModal';
 import { FaStar } from 'react-icons/fa';
-import { Button, Table } from 'react-bootstrap';
+import { Button, Table, Modal } from 'react-bootstrap';
 import EditReview from './EditReview';
 
 interface ReviewItem {
@@ -23,7 +22,8 @@ const dummyData: ReviewItem[] = [
     id: 1,
     productName: 'Smart Watch',
     ProductID: 'adx5d48r9we5df41c2s',
-    productImage: 'https://images-cdn.ubuy.co.in/653dca4638b3b6351c03b03e-smart-watch-for-android-and-iphone.jpg',
+    productImage:
+      'https://images-cdn.ubuy.co.in/653dca4638b3b6351c03b03e-smart-watch-for-android-and-iphone.jpg',
     review: 'Good quality and battery backup.',
     rating: 1,
     userName: 'Rasel',
@@ -33,7 +33,8 @@ const dummyData: ReviewItem[] = [
     id: 2,
     productName: 'Bluetooth Speaker',
     ProductID: 'adx5d48r9we5df41c2s',
-    productImage: 'https://images-cdn.ubuy.co.in/637d4285cd08060bb45cb0f3-bluetooth-pa-speaker-system-with.jpg',
+    productImage:
+      'https://images-cdn.ubuy.co.in/637d4285cd08060bb45cb0f3-bluetooth-pa-speaker-system-with.jpg',
     review: 'Loud and clear sound.',
     rating: 5,
     userName: 'Hossain',
@@ -49,7 +50,6 @@ const dummyData: ReviewItem[] = [
     userName: 'Jannat',
     date: '2025-05-16',
   },
-  // আরও ডামি রিভিউ চাইলে এখানে যুক্ত করুন
 ];
 
 const Review = () => {
@@ -58,6 +58,8 @@ const Review = () => {
   const [paginationItemsPerPage, setPaginationItemsPerPage] = useState(5);
   const [showModal, setShowModal] = useState(false);
   const [selectedReview, setSelectedReview] = useState<ReviewItem | null>(null);
+  const [showImageModal, setShowImageModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const startIndex = (paginationCurrentPage - 1) * paginationItemsPerPage;
   const currentItems = reviews.slice(startIndex, startIndex + paginationItemsPerPage);
@@ -76,7 +78,9 @@ const Review = () => {
 
   const handleReviewUpdated = (updated: { id: number; review: string; rating: number }) => {
     setReviews((prev) =>
-      prev.map((r) => (r.id === updated.id ? { ...r, review: updated.review, rating: updated.rating } : r))
+      prev.map((r) =>
+        r.id === updated.id ? { ...r, review: updated.review, rating: updated.rating } : r
+      )
     );
   };
 
@@ -100,8 +104,8 @@ const Review = () => {
       </div>
 
       {/* Review Table */}
-      <div className="table-responsive">
-        <Table bordered hover>
+      <div className="table-responsive ">
+        <Table bordered hover striped >
           <thead style={{ backgroundColor: 'var(--ColorOne)', color: 'white' }}>
             <tr>
               <th>Image</th>
@@ -118,7 +122,16 @@ const Review = () => {
             {currentItems.map((review) => (
               <tr key={review.id}>
                 <td>
-                  <img src={review.productImage} alt="product" width={60} />
+                  <img
+                    src={review.productImage}
+                    alt="product"
+                    width={60}
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      setSelectedImage(review.productImage);
+                      setShowImageModal(true);
+                    }}
+                  />
                 </td>
                 <td>{review.productName}</td>
                 <td>{review.ProductID}</td>
@@ -171,6 +184,25 @@ const Review = () => {
           onReviewUpdated={handleReviewUpdated}
         />
       )}
+
+      {/* Image Preview Modal */}
+      <Modal show={showImageModal} onHide={() => setShowImageModal(false)} centered size="lg">
+        <Modal.Body className="text-center p-0">
+          {selectedImage && (
+            <img
+              src={selectedImage}
+              alt="Large preview"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '80vh',
+                objectFit: 'contain',
+                borderRadius: '8px',
+              }}
+            />
+          )}
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

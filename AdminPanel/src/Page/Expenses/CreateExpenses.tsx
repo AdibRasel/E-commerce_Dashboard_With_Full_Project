@@ -99,22 +99,34 @@ const CreateExpenses: React.FC<CreateExpensesProps> = ({ show, onClose }) => {
               <div className="mb-3">
                 <label className="form-label">Date</label>
                 <DatePicker
-                    value={date}
-                    onChange={(val) => {
-                      if (val instanceof Date) setDate(val);
-                    }}
-                    format="dd/MM/yyyy"
-                    className="form-control custom-date-picker w-100"
-                      calendarIcon={<IoCalendarNumberSharp size={20} color="#213448" />}
+                  value={date}
+                  onChange={(val) => {
+                    if (val instanceof Date) setDate(val);
+                  }}
+                  format="dd/MM/yyyy"
+                  className="form-control custom-date-picker w-100"
+                  calendarIcon={<IoCalendarNumberSharp size={20} color="#213448" />}
 
-                    clearIcon={null}
-                    required
-                  />
+                  clearIcon={null}
+                  required
+                />
               </div>
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
-              <button type="submit" className="btn btn-primary">Save Expense</button>
+              <button
+                    type="button"
+                    className="btn btn-secondary me-2"
+                    onClick={onClose}
+                >
+                Cancel
+                </button>
+              <button
+                type="submit"
+                className="btn btn-success"
+                style={{ backgroundColor: 'var(--ColorTwo)', borderColor: 'var(--ColorTwo)' }}
+              >
+                Save Expense
+              </button>
             </div>
           </form>
         </div>

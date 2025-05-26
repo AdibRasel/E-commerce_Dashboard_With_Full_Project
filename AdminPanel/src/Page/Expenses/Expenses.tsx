@@ -135,7 +135,9 @@ const Expenses = () => {
         </button>
 
         <button
-          className="btn btn-primary ms-auto fw-semibold"
+          // className="btn btn-primary ms-auto fw-semibold"
+           className="btn btn-primary ms-auto"
+                    style={{ backgroundColor: 'var(--ColorTwo)', borderColor: 'var(--ColorTwo)' }}
           onClick={() => setShowModal(true)}
         >
           + Add New Expense
